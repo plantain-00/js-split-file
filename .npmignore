@@ -1,0 +1,7 @@
+.vscode
+tslint.json
+.travis.yml
+tsconfig.json
+common.ts
+browser.ts
+nodejs.ts
