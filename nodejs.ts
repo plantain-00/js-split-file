@@ -1,4 +1,5 @@
 import { StringDecoder } from "string_decoder";
+import {SplitFileBase} from "./common";
 
 export class SplitFile extends SplitFileBase {
     private stringDecoder = new StringDecoder();

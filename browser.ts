@@ -1,3 +1,5 @@
+import {SplitFileBase} from "./common";
+
 declare class TextEncoder {
     encode(text: string): Uint8Array;
 }

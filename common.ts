@@ -1,4 +1,4 @@
-abstract class SplitFileBase {
+export abstract class SplitFileBase {
     decodeBlock(block: Uint8Array) {
         const totalBytesCountBinary = block.subarray(0, 4);
         const totalBytesCount = this.uint8ArrayToInt32(totalBytesCountBinary);
