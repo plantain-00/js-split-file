@@ -1,20 +1,12 @@
 export abstract class SplitFileBase {
     decodeBlock(block: Uint8Array) {
-        const totalBytesCountBinary = block.subarray(0, 4);
-        const totalBytesCount = this.uint8ArrayToInt32(totalBytesCountBinary);
-
-        const fileNameBinaryLengthBinary = block.subarray(4, 8);
-        const fileNameBinaryLength = this.uint8ArrayToInt32(fileNameBinaryLengthBinary);
-        const fileNameBinary = block.subarray(8, 8 + fileNameBinaryLength);
-        const fileName = this.decode(fileNameBinary);
-
-        const totalBlockCountBinary = block.subarray(8 + fileNameBinaryLength, 12 + fileNameBinaryLength);
-        const totalBlockCount = this.uint8ArrayToInt32(totalBlockCountBinary);
-
-        const currentBlockIndexBinary = block.subarray(12 + fileNameBinaryLength, 16 + fileNameBinaryLength);
-        const currentBlockIndex = this.uint8ArrayToInt32(currentBlockIndexBinary);
-
-        const binary = block.subarray(16 + fileNameBinaryLength);
+        const binaryDecoder = new BinaryDecoder(block.buffer, this.decode, block.byteOffset);
+        const totalBytesCount = binaryDecoder.getInt32();
+        const fileNameBinaryLength = binaryDecoder.getInt32();
+        const fileName = binaryDecoder.getString(fileNameBinaryLength);
+        const totalBlockCount = binaryDecoder.getInt32();
+        const currentBlockIndex = binaryDecoder.getInt32();
+        const binary = binaryDecoder.getBinary(Infinity);
         return {
             totalBytesCount,
             fileName,
@@ -29,47 +21,148 @@ export abstract class SplitFileBase {
             return blocks;
         }
         const totalBlockCount = Math.floor((uint8Array.length - 1) / size) + 1;
-        const totalBlockCountBinary = this.int32ToUint8Array(totalBlockCount);
+        const totalBlockCountBinary = BinaryEncoder.fromInt32(totalBlockCount);
 
-        const totalBytesCountBinary = this.int32ToUint8Array(uint8Array.length);
+        const totalBytesCountBinary = BinaryEncoder.fromInt32(uint8Array.length);
 
         const fileNameBinary = this.encode(fileName);
-        const fileNameBinaryLengthBinary = this.int32ToUint8Array(fileNameBinary.length);
+        const fileNameBinaryLengthBinary = BinaryEncoder.fromInt32(fileNameBinary.length);
 
         for (let i = 0; i < totalBlockCount; i++) {
             const binary = uint8Array.subarray(i * size, i * size + size);
-            const block = new Uint8Array(16 + fileNameBinary.length + binary.length);
-            block.set(totalBytesCountBinary, 0);
-            block.set(fileNameBinaryLengthBinary, 4);
-            block.set(fileNameBinary, 8);
-            block.set(totalBlockCountBinary, 8 + fileNameBinary.length);
-            const currentBlockIndexBinary = this.int32ToUint8Array(i);
-            block.set(currentBlockIndexBinary, 12 + fileNameBinary.length);
-            block.set(binary, 16 + fileNameBinary.length);
+            const currentBlockIndexBinary = BinaryEncoder.fromInt32(i);
+            const block = new Uint8Array(totalBytesCountBinary.length
+                + fileNameBinaryLengthBinary.length
+                + fileNameBinary.length
+                + totalBlockCountBinary.length
+                + currentBlockIndexBinary.length
+                + binary.length);
+            const binaryEncoder = new BinaryEncoder(block);
+            binaryEncoder.setBinary(totalBytesCountBinary,
+                fileNameBinaryLengthBinary,
+                fileNameBinary,
+                totalBlockCountBinary,
+                currentBlockIndexBinary,
+                binary);
             blocks.push(block);
         }
         return blocks;
     }
     protected abstract encode(text: string): Uint8Array;
     protected abstract decode(uint8Array: Uint8Array): string;
-    private int32ToUint8Array(num: number) {
-        const result = new Uint8Array(4);
-        result[3] = num % 256;
-        num >>= 8;
-        result[2] = num % 256;
-        num >>= 8;
-        result[1] = num % 256;
-        num >>= 8;
-        result[0] = num % 256;
+}
+
+export class BinaryDecoder {
+    constructor(public arrayBuffer: ArrayBuffer, public decode: (uint8Array: Uint8Array) => string, public index = 0) { }
+
+    getInt8() {
+        return this.getInt8Array(1)[0];
+    }
+    getInt8Array(count: number) {
+        const array = new Int8Array(this.arrayBuffer, this.index, count);
+        this.index += count;
+        return array;
+    }
+    getUint8() {
+        return this.getUint8Array(1)[0];
+    }
+    getUint8Array(count: number) {
+        const array = new Uint8Array(this.arrayBuffer, this.index, count);
+        this.index += count;
+        return array;
+    }
+
+    getInt16() {
+        return this.getInt16Array(1)[0];
+    }
+    getInt16Array(count: number) {
+        const array = new Int16Array(this.arrayBuffer, this.index, 2 * count);
+        this.index += 2 * count;
+        return array;
+    }
+    getUint16() {
+        return this.getUint16Array(1)[0];
+    }
+    getUint16Array(count: number) {
+        const array = new Uint16Array(this.arrayBuffer, this.index, 2 * count);
+        this.index += 2 * count;
+        return array;
+    }
+
+    getInt32() {
+        return this.getInt32Array(1)[0];
+    }
+    getInt32Array(count: number) {
+        const array = new Int32Array(this.arrayBuffer, this.index, 4 * count);
+        this.index += 4 * count;
+        return array;
+    }
+    getUint32() {
+        return this.getUint32Array(1)[0];
+    }
+    getUint32Array(count: number) {
+        const array = new Uint32Array(this.arrayBuffer, this.index, 4 * count);
+        this.index += 4 * count;
+        return array;
+    }
+    getFloat32() {
+        return this.getFloat32Array(1)[0];
+    }
+    getFloat32Array(count: number) {
+        const array = new Float32Array(this.arrayBuffer, this.index, 4 * count);
+        this.index += 4 * count;
+        return array;
+    }
+    getFloat64() {
+        return this.getFloat64Array(1)[0];
+    }
+    getFloat64Array(count: number) {
+        const array = new Float64Array(this.arrayBuffer, this.index, 8 * count);
+        this.index += 8 * count;
+        return array;
+    }
+
+    getString(length: number) {
+        return this.decode(this.getBinary(length));
+    }
+
+    getBinary(length: number) {
+        const result = new Uint8Array(this.arrayBuffer, this.index, length);
+        this.index += length;
         return result;
     }
-    private uint8ArrayToInt32(uint8Array: Uint8Array) {
-        let result = uint8Array[0];
-        result <<= 8;
-        result += uint8Array[1];
-        result <<= 8;
-        result += uint8Array[2];
-        result <<= 8;
-        return result + uint8Array[3];
+}
+
+export class BinaryEncoder {
+    static fromInt8(...values: number[]) {
+        return new Uint8Array(new Int8Array(values).buffer);
+    }
+
+    static fromInt16(...values: number[]) {
+        return new Uint8Array(new Int16Array(values).buffer);
+    }
+    static fromUint16(...values: number[]) {
+        return new Uint8Array(new Uint16Array(values).buffer);
+    }
+
+    static fromInt32(...values: number[]) {
+        return new Uint8Array(new Int32Array(values).buffer);
+    }
+    static fromUint32(...values: number[]) {
+        return new Uint8Array(new Uint32Array(values).buffer);
+    }
+    static fromFloat32(...values: number[]) {
+        return new Uint8Array(new Float32Array(values).buffer);
+    }
+    static fromFloat64(...values: number[]) {
+        return new Uint8Array(new Float64Array(values).buffer);
+    }
+    public index = 0;
+    constructor(public uint8Array: Uint8Array) { }
+    setBinary(...uint8Arrays: Uint8Array[]) {
+        for (const uint8Array of uint8Arrays) {
+            this.uint8Array.set(uint8Array, this.index);
+            this.index += uint8Array.length;
+        }
     }
 }
