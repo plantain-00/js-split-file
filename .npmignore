@@ -5,3 +5,4 @@ tsconfig.json
 common.ts
 browser.ts
 nodejs.ts
+spec
