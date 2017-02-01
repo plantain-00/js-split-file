@@ -19,13 +19,13 @@
   },
   "homepage": "https://github.com/plantain-00/js-split-file#readme",
   "dependencies": {
-    "fluent-binary-converter": "1.0.0"
+    "fluent-binary-converter": "1.0.1"
   },
   "devDependencies": {
-    "@types/jasmine": "2.5.40",
-    "@types/node": "7.0.0",
+    "@types/jasmine": "2.5.41",
+    "@types/node": "7.0.4",
     "jasmine": "2.5.3",
-    "tslint": "4.3.1",
-    "typescript": "2.1.4"
+    "tslint": "4.4.2",
+    "typescript": "2.1.5"
   }
 }
