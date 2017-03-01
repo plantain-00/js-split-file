@@ -22,10 +22,10 @@
     "fluent-binary-converter": "1"
   },
   "devDependencies": {
-    "@types/jasmine": "2.5.41",
-    "@types/node": "7.0.4",
+    "@types/jasmine": "2.5.43",
+    "@types/node": "7.0.5",
     "jasmine": "2.5.3",
-    "tslint": "4.4.2",
-    "typescript": "2.1.5"
+    "tslint": "4.5.1",
+    "typescript": "2.2.1"
   }
 }
