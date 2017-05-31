@@ -24,9 +24,9 @@
   },
   "devDependencies": {
     "@types/jasmine": "2.5.47",
-    "@types/node": "7.0.14",
+    "@types/node": "7.0.22",
     "jasmine": "2.6.0",
-    "tslint": "5.1.0",
-    "typescript": "2.3.2"
+    "tslint": "5.4.0",
+    "typescript": "2.3.4"
   }
 }
