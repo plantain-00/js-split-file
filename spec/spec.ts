@@ -1,4 +1,4 @@
-import { SplitFile } from "../nodejs";
+import SplitFile from "../dist/nodejs";
 
 it("", () => {
     const splitFile = new SplitFile();

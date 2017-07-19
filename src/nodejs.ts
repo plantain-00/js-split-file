@@ -1,8 +1,10 @@
-import { BinaryDecoder, BinaryEncoder } from "fluent-binary-converter";
+import { StringDecoder } from "string_decoder";
+import { BinaryDecoder, BinaryEncoder } from "fluent-binary-converter/nodejs";
 
-export abstract class SplitFileBase {
+export default class SplitFile  {
+    private stringDecoder = new StringDecoder();
     decodeBlock(block: Uint8Array) {
-        const binaryDecoder = new BinaryDecoder(block.buffer, block.byteOffset);
+        const binaryDecoder = new BinaryDecoder(block.buffer as ArrayBuffer, block.byteOffset);
         const totalBytesCount = binaryDecoder.getUint32();
         const fileNameBinaryLength = binaryDecoder.getUint32();
         const fileName = this.decode(binaryDecoder.getBinary(fileNameBinaryLength));
@@ -50,6 +52,10 @@ export abstract class SplitFileBase {
         }
         return blocks;
     }
-    protected abstract encode(text: string): Uint8Array;
-    protected abstract decode(uint8Array: Uint8Array): string;
+    protected encode(text: string) {
+        return new Uint8Array(new Buffer(text));
+    }
+    protected decode(uint8Array: Uint8Array) {
+        return this.stringDecoder.write(new Buffer(uint8Array));
+    }
 }

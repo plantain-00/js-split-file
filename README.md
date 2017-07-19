@@ -14,11 +14,14 @@ A library to split big file to small binary data for nodejs and browsers.
 #### usage
 
 ```ts
-// for nodejs
-import { SplitFile } from "js-split-file/nodejs";
+// nodejs:
+import SplitFile from "js-split-file/nodejs";
 
-// or browser
-import { SplitFile } from "js-split-file/browser";
+// browser(module):
+import SplitFile from "js-split-file/browser";
+
+// browser(script tag):
+// <script src="js-split-file/js-split-file.min.js"></script>
 
 const splitFile = new SplitFile();
 const binary = new Uint8Array([1, 2, 3]); // for browser, from File or Blob to Uint8Array; for nodejs, from Buffer to Uint8Array
@@ -36,3 +39,15 @@ const blocks = splitFile.split(new Uint8Array([1, 2, 3]), "a.pdf", 10000); // ea
 
 + Uint8Array, or polyfill like `core-js`
 + for browser, it need `TextEncoder` and `TextDecoder`, if the browsers don't support them, use polyfill like `text-encoding`
+
+#### change logs
+
+```ts
+// v2
+import SplitFile from "js-split-file/nodejs";
+import SplitFile from "js-split-file/browser";
+
+// v1
+import { SplitFile } from "js-split-file/nodejs";
+import { SplitFile } from "js-split-file/browser";
+```

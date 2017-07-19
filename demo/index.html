@@ -1,0 +1,8 @@
+<script src="../dist/js-split-file.min.js"></script>
+<script>
+    const splitFile = new SplitFile();
+    const blocks = splitFile.split(new Uint8Array([1, 2, 3, 4]), "a.txt");
+    console.log(blocks);
+    const piece = splitFile.decodeBlock(blocks[0]);
+    console.log(piece);
+</script>

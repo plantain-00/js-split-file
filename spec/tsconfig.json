@@ -1,9 +1,7 @@
 {
     "compilerOptions": {
-        "target": "es5",
+        "target": "esnext",
         "module": "commonjs",
-
-        "declaration": true,
 
         "strict": true,
         "noUnusedLocals": true,
@@ -11,7 +9,6 @@
 
         "skipLibCheck": true,
         "importHelpers": true,
-        "jsx": "react",
         "experimentalDecorators": true,
         "allowSyntheticDefaultImports": true
     }

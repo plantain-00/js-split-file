@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+
+        "declaration": true,
+
+        "strict": true,
+        "noUnusedLocals": true,
+        "noImplicitReturns": true,
+
+        "skipLibCheck": true,
+        "importHelpers": true,
+        "experimentalDecorators": true,
+        "allowSyntheticDefaultImports": true
+    }
+}
