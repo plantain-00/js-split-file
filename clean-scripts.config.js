@@ -7,8 +7,7 @@ module.exports = {
   ],
   lint: [
     `tslint "*.ts" "spec/*.ts"`,
-    `standard "**/*.config.js"`,
-    `stylelint "online/**/*.less"`
+    `standard "**/*.config.js"`
   ],
   test: [
     'tsc -p spec',
