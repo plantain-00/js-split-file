@@ -8,6 +8,9 @@ declare class TextDecoder {
     decode(uint8Array: Uint8Array): string;
 }
 
+/**
+ * @public
+ */
 export default class SplitFile {
     private textEncoder = new TextEncoder();
     private textDecoder = new TextDecoder();

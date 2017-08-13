@@ -1,6 +1,9 @@
 import { StringDecoder } from "string_decoder";
 import { BinaryDecoder, BinaryEncoder } from "fluent-binary-converter/nodejs";
 
+/**
+ * @public
+ */
 export default class SplitFile  {
     private stringDecoder = new StringDecoder();
     decodeBlock(block: Uint8Array) {
