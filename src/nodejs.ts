@@ -6,7 +6,7 @@ import { BinaryDecoder, BinaryEncoder } from "fluent-binary-converter/nodejs";
  */
 export default class SplitFile  {
     private stringDecoder = new StringDecoder();
-    decodeBlock(block: Uint8Array) {
+    public decodeBlock(block: Uint8Array) {
         const binaryDecoder = new BinaryDecoder(block.buffer as ArrayBuffer, block.byteOffset);
         const totalBytesCount = binaryDecoder.getUint32();
         const fileNameBinaryLength = binaryDecoder.getUint32();
@@ -22,7 +22,7 @@ export default class SplitFile  {
             binary,
         };
     }
-    split(uint8Array: Uint8Array, fileName: string, size: number = 10000) {
+    public split(uint8Array: Uint8Array, fileName: string, size: number = 10000) {
         const blocks: Uint8Array[] = [];
         if (uint8Array.length === 0) {
             return blocks;
