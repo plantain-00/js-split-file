@@ -36,24 +36,17 @@ export default class SplitFile {
             return blocks;
         }
         const totalBlockCount = Math.floor((uint8Array.length - 1) / size) + 1;
-        const totalBlockCountBinary = BinaryEncoder.fromUint32(totalBlockCount);
+        const totalBlockCountBinary = BinaryEncoder.fromUint32(true, totalBlockCount);
 
-        const totalBytesCountBinary = BinaryEncoder.fromUint32(uint8Array.length);
+        const totalBytesCountBinary = BinaryEncoder.fromUint32(true, uint8Array.length);
 
         const fileNameBinary = this.encode(fileName);
-        const fileNameBinaryLengthBinary = BinaryEncoder.fromUint32(fileNameBinary.length);
+        const fileNameBinaryLengthBinary = BinaryEncoder.fromUint32(true, fileNameBinary.length);
 
         for (let i = 0; i < totalBlockCount; i++) {
             const binary = uint8Array.subarray(i * size, i * size + size);
-            const currentBlockIndexBinary = BinaryEncoder.fromUint32(i);
-            const block = new Uint8Array(totalBytesCountBinary.length
-                + fileNameBinaryLengthBinary.length
-                + fileNameBinary.length
-                + totalBlockCountBinary.length
-                + currentBlockIndexBinary.length
-                + binary.length);
-            const binaryEncoder = new BinaryEncoder(block);
-            binaryEncoder.setBinary(totalBytesCountBinary,
+            const currentBlockIndexBinary = BinaryEncoder.fromUint32(true, i);
+            const block = BinaryEncoder.concat(totalBytesCountBinary,
                 fileNameBinaryLengthBinary,
                 fileNameBinary,
                 totalBlockCountBinary,

@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/plantain-00/js-split-file#readme",
   "dependencies": {
-    "fluent-binary-converter": "2",
+    "fluent-binary-converter": "4",
     "tslib": "1"
   },
   "devDependencies": {

@@ -599,9 +599,9 @@ flat-cache@^1.2.1:
     graceful-fs "^4.1.2"
     write "^0.2.1"
 
-fluent-binary-converter@2:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/fluent-binary-converter/-/fluent-binary-converter-2.0.0.tgz#42cbe32be374ba60bdfaaff10ba638de4142d36a"
+fluent-binary-converter@4:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/fluent-binary-converter/-/fluent-binary-converter-4.0.0.tgz#c6852a9a18bf273ec4d16f9c2ddc9611a2226ab2"
 
 foreach@^2.0.5:
   version "2.0.5"
