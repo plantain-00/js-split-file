@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "@types/jasmine": "2.6.0",
-    "@types/node": "8.0.31",
+    "@types/node": "8.0.33",
     "clean-release": "1.3.5",
     "clean-scripts": "1.2.6",
     "jasmine": "2.8.0",
