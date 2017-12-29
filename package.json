@@ -30,6 +30,7 @@
     "@types/node": "8.5.2",
     "clean-scripts": "1.7.0",
     "jasmine": "2.8.0",
+    "markdownlint-cli": "0.5.0",
     "no-unused-export": "1.4.3",
     "rimraf": "2.6.2",
     "rollup": "0.52.3",
