@@ -1,6 +1,6 @@
 {
   "name": "js-split-file",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "A library to split big file to small binary data for nodejs and browsers.",
   "main": "index.js",
   "scripts": {
@@ -21,6 +21,7 @@
   "homepage": "https://github.com/plantain-00/js-split-file#readme",
   "dependencies": {
     "fluent-binary-converter": "4",
+    "text-encoding": "0.6",
     "tslib": "1"
   },
   "devDependencies": {
@@ -28,6 +29,7 @@
     "@commitlint/config-angular": "5.1.1",
     "@types/jasmine": "2.8.3",
     "@types/node": "8.5.2",
+    "@types/text-encoding": "0.0.32",
     "clean-scripts": "1.7.0",
     "jasmine": "2.8.0",
     "markdownlint-cli": "0.5.0",

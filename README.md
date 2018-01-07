@@ -25,6 +25,9 @@ import SplitFile from "js-split-file/browser";
 // browser(script tag):
 // <script src="js-split-file/js-split-file.min.js"></script>
 
+// react-native:
+import SplitFile from "js-split-file/react-native";
+
 const splitFile = new SplitFile();
 const binary = new Uint8Array([1, 2, 3]); // for browser, from File or Blob to Uint8Array; for nodejs, from Buffer to Uint8Array
 const blocks = splitFile.split(binary, "a.pdf");

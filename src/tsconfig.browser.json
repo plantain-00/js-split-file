@@ -7,6 +7,7 @@
         "moduleResolution": "node"
     },
     "files": [
-        "browser.ts"
+        "browser.ts",
+        "react-native.ts"
     ]
 }
