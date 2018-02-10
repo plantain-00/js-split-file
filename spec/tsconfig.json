@@ -1,16 +1,6 @@
 {
-    "compilerOptions": {
-        "target": "esnext",
-        "module": "commonjs",
-
-        "strict": true,
-        "noUnusedLocals": true,
-        "noImplicitReturns": true,
-
-        "skipLibCheck": true,
-        "importHelpers": true,
-        "experimentalDecorators": true,
-        "allowSyntheticDefaultImports": true,
-        "newLine": "LF"
-    }
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "module": "commonjs"
+  }
 }

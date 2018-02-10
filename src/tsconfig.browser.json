@@ -1,13 +1,12 @@
 {
-    "extends": "./tsconfig.base.json",
-    "compilerOptions": {
-        "target": "es5",
-        "outDir": "../dist",
-        "module": "esnext",
-        "moduleResolution": "node"
-    },
-    "files": [
-        "browser.ts",
-        "react-native.ts"
-    ]
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "target": "es5",
+    "outDir": "../dist",
+    "declaration": true
+  },
+  "files": [
+    "browser.ts",
+    "react-native.ts"
+  ]
 }
