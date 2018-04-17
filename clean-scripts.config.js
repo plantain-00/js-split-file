@@ -1,5 +1,3 @@
-const { checkGitStatus } = require('clean-scripts')
-
 const tsFiles = `"src/**/*.ts" "spec/**/*.ts" "demo/**/*.ts"`
 const jsFiles = `"*.config.js"`
 
@@ -23,8 +21,7 @@ module.exports = {
   },
   test: [
     'tsc -p spec',
-    'jasmine',
-    () => checkGitStatus()
+    'jasmine'
   ],
   fix: {
     ts: `tslint --fix ${tsFiles}`,
