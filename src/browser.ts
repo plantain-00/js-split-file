@@ -1,11 +1,11 @@
 import { BinaryDecoder, BinaryEncoder } from 'fluent-binary-converter/browser'
 
 declare class TextEncoder {
-  encode (text: string): Uint8Array
+  encode(text: string): Uint8Array
 }
 
 declare class TextDecoder {
-  decode (uint8Array: Uint8Array): string
+  decode(uint8Array: Uint8Array): string
 }
 
 /**
@@ -14,7 +14,7 @@ declare class TextDecoder {
 export default class SplitFile {
   private textEncoder = new TextEncoder()
   private textDecoder = new TextDecoder()
-  public decodeBlock (block: Uint8Array) {
+  public decodeBlock(block: Uint8Array) {
     const binaryDecoder = new BinaryDecoder(block.buffer as ArrayBuffer, block.byteOffset)
     const totalBytesCount = binaryDecoder.getUint32()
     const fileNameBinaryLength = binaryDecoder.getUint32()
@@ -30,7 +30,7 @@ export default class SplitFile {
       binary
     }
   }
-  public split (uint8Array: Uint8Array, fileName: string, size: number = 10000) {
+  public split(uint8Array: Uint8Array, fileName: string, size: number = 10000) {
     const blocks: Uint8Array[] = []
     if (uint8Array.length === 0) {
       return blocks
@@ -47,20 +47,20 @@ export default class SplitFile {
       const binary = uint8Array.subarray(i * size, i * size + size)
       const currentBlockIndexBinary = BinaryEncoder.fromUint32(true, i)
       const block = BinaryEncoder.concat(totalBytesCountBinary,
-                fileNameBinaryLengthBinary,
-                fileNameBinary,
-                totalBlockCountBinary,
-                currentBlockIndexBinary,
-                binary)
+        fileNameBinaryLengthBinary,
+        fileNameBinary,
+        totalBlockCountBinary,
+        currentBlockIndexBinary,
+        binary)
       blocks.push(block)
     }
     return blocks
   }
 
-  protected encode (text: string) {
+  protected encode(text: string) {
     return this.textEncoder.encode(text)
   }
-  protected decode (uint8Array: Uint8Array) {
+  protected decode(uint8Array: Uint8Array) {
     return this.textDecoder.decode(uint8Array)
   }
 }
