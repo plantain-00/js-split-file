@@ -6,6 +6,7 @@
 [![Build Status: Windows](https://ci.appveyor.com/api/projects/status/github/plantain-00/js-split-file?branch=master&svg=true)](https://ci.appveyor.com/project/plantain-00/js-split-file/branch/master)
 [![npm version](https://badge.fury.io/js/js-split-file.svg)](https://badge.fury.io/js/js-split-file)
 [![Downloads](https://img.shields.io/npm/dm/js-split-file.svg)](https://www.npmjs.com/package/js-split-file)
+[![gzip size](https://img.badgesize.io/https://unpkg.com/js-split-file?compression=gzip)](https://unpkg.com/js-split-file)
 
 A library to split big file to small binary data for nodejs and browsers.
 

@@ -1,8 +1,12 @@
 {
   "name": "js-split-file",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "A library to split big file to small binary data for nodejs and browsers.",
   "main": "index.js",
+  "module": "index.js",
+  "unpkg": "js-split-file.min.js",
+  "jsdelivr": "js-split-file.min.js",
+  "types": "index.d.ts",
   "scripts": {
     "build": "clean-scripts build",
     "lint": "clean-scripts lint",
