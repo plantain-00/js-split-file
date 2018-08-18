@@ -154,17 +154,17 @@
   version "2.8.8"
   resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-2.8.8.tgz#bf53a7d193ea8b03867a38bfdb4fbb0e0bf066c9"
 
-"@types/node@*", "@types/node@10.5.7":
-  version "10.5.7"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.5.7.tgz#960d9feb3ade2233bcc9843c918d740b4f78a7cf"
+"@types/node@*", "@types/node@10.7.1":
+  version "10.7.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.7.1.tgz#b704d7c259aa40ee052eec678758a68d07132a2e"
 
 "@types/text-encoding@0.0.33":
   version "0.0.33"
   resolved "https://registry.yarnpkg.com/@types/text-encoding/-/text-encoding-0.0.33.tgz#67618d2da2cb6055c16c7caa2e967c1c6d1e7600"
 
 JSONStream@^1.0.4:
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/JSONStream/-/JSONStream-1.3.3.tgz#27b4b8fbbfeab4e71bcf551e7f27be8d952239bf"
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/JSONStream/-/JSONStream-1.3.4.tgz#615bb2adb0cd34c8f4c447b5f6512fa1d8f16a2e"
   dependencies:
     jsonparse "^1.2.0"
     through ">=2.2.7 <3"
@@ -521,11 +521,10 @@ deep-is@~0.1.3:
   resolved "https://registry.yarnpkg.com/deep-is/-/deep-is-0.1.3.tgz#b369d6fb5dbc13eecf524f91b070feedc357cf34"
 
 define-properties@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/define-properties/-/define-properties-1.1.2.tgz#83a73f2fea569898fb737193c8f873caf6d45c94"
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/define-properties/-/define-properties-1.1.3.tgz#cf88da6cbee26fe6db7094f61d870cbd84cee9f1"
   dependencies:
-    foreach "^2.0.5"
-    object-keys "^1.0.8"
+    object-keys "^1.0.12"
 
 deglob@^2.1.0:
   version "2.1.1"
@@ -826,10 +825,6 @@ fluent-binary-converter@4:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/fluent-binary-converter/-/fluent-binary-converter-4.0.2.tgz#548fe702e3d38ac02a1d095bdf6c723ae31a3d8a"
 
-foreach@^2.0.5:
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/foreach/-/foreach-2.0.5.tgz#0bee005018aeb260d0a3af3ae658dd0136ec1b99"
-
 fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
@@ -860,7 +855,7 @@ git-raw-commits@^1.3.0:
     split2 "^2.0.0"
     through2 "^2.0.0"
 
-glob@7.1.2, glob@^7.0.3, glob@^7.0.5, glob@^7.0.6, glob@^7.1.1, glob@^7.1.2:
+glob@7.1.2, glob@^7.0.3, glob@^7.0.5, glob@^7.0.6, glob@^7.1.1, glob@^7.1.2, glob@~7.1.2:
   version "7.1.2"
   resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.2.tgz#c19c9df9a028702d678612384a6552404c636d15"
   dependencies:
@@ -868,17 +863,6 @@ glob@7.1.2, glob@^7.0.3, glob@^7.0.5, glob@^7.0.6, glob@^7.1.1, glob@^7.1.2:
     inflight "^1.0.4"
     inherits "2"
     minimatch "^3.0.4"
-    once "^1.3.0"
-    path-is-absolute "^1.0.0"
-
-glob@~7.0.3:
-  version "7.0.6"
-  resolved "https://registry.yarnpkg.com/glob/-/glob-7.0.6.tgz#211bafaf49e525b8cd93260d14ab136152b3f57a"
-  dependencies:
-    fs.realpath "^1.0.0"
-    inflight "^1.0.4"
-    inherits "2"
-    minimatch "^3.0.2"
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
@@ -1086,8 +1070,8 @@ isexe@^2.0.0:
   resolved "https://registry.yarnpkg.com/isexe/-/isexe-2.0.0.tgz#e8fbf374dc556ff8947a10dcb0572d633f2cfa10"
 
 jasmine-core@~3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/jasmine-core/-/jasmine-core-3.2.0.tgz#e33657dd6bb7f3d8e05b55b63ead841218146374"
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/jasmine-core/-/jasmine-core-3.2.1.tgz#8e4ff5b861603ee83343f2b49eee6a0ffe9650ce"
 
 jasmine@3.2.0:
   version "3.2.0"
@@ -1289,18 +1273,19 @@ markdown-it@8.4.2:
     mdurl "^1.0.1"
     uc.micro "^1.0.5"
 
-markdownlint-cli@0.12.0:
-  version "0.12.0"
-  resolved "https://registry.yarnpkg.com/markdownlint-cli/-/markdownlint-cli-0.12.0.tgz#14db32e28be098a0963c91e547f8adb58efdb158"
+markdownlint-cli@0.13.0:
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/markdownlint-cli/-/markdownlint-cli-0.13.0.tgz#af1d29e5d8b434256c451c81b87dff1c218844cb"
   dependencies:
     commander "~2.9.0"
     deep-extend "~0.5.1"
     get-stdin "~5.0.1"
-    glob "~7.0.3"
+    glob "~7.1.2"
     js-yaml "~3.11.0"
     lodash.differencewith "~4.5.0"
     lodash.flatten "~4.4.0"
     markdownlint "~0.11.0"
+    minimatch "~3.0.4"
     rc "~1.2.7"
 
 markdownlint@~0.11.0:
@@ -1345,7 +1330,7 @@ mimic-fn@^1.0.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/mimic-fn/-/mimic-fn-1.2.0.tgz#820c86a39334640e99516928bd03fca88057d022"
 
-minimatch@^3.0.2, minimatch@^3.0.3, minimatch@^3.0.4:
+minimatch@^3.0.2, minimatch@^3.0.3, minimatch@^3.0.4, minimatch@~3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-3.0.4.tgz#5166e286457f03306064be5497e8dbb0c3d32083"
   dependencies:
@@ -1413,7 +1398,7 @@ object-assign@^4.0.1, object-assign@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
 
-object-keys@^1.0.8:
+object-keys@^1.0.12:
   version "1.0.12"
   resolved "https://registry.yarnpkg.com/object-keys/-/object-keys-1.0.12.tgz#09c53855377575310cca62f55bb334abff7b3ed2"
 
@@ -1791,7 +1776,11 @@ safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
 
-"semver@2 || 3 || 4 || 5", semver@5.5.0, semver@^5.3.0, semver@^5.4.1:
+"semver@2 || 3 || 4 || 5", semver@^5.3.0, semver@^5.4.1:
+  version "5.5.1"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-5.5.1.tgz#7dfdd8814bdb7cabc7be0fb1d734cfb66c940477"
+
+semver@5.5.0:
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.5.0.tgz#dc4bbc7a6ca9d916dee5d43516f0092b58f7b8ab"
 
@@ -1979,7 +1968,7 @@ trim-off-newlines@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/trim-off-newlines/-/trim-off-newlines-1.0.1.tgz#9f9ba9d9efa8764c387698bcbfeb2c848f11adb3"
 
-tslib@1, tslib@1.9.3, tslib@^1.7.1, tslib@^1.8.0, tslib@^1.8.1:
+tslib@1, tslib@1.9.3, tslib@^1.8.0, tslib@^1.8.1:
   version "1.9.3"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
 
@@ -1998,12 +1987,12 @@ tslint-config-standard@7.1.0:
     tslint-eslint-rules "^5.3.1"
 
 tslint-eslint-rules@^5.3.1:
-  version "5.3.1"
-  resolved "https://registry.yarnpkg.com/tslint-eslint-rules/-/tslint-eslint-rules-5.3.1.tgz#10dec4361df0b3e4385d91ff8e0226bda4ec2ad4"
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/tslint-eslint-rules/-/tslint-eslint-rules-5.4.0.tgz#e488cc9181bf193fe5cd7bfca213a7695f1737b5"
   dependencies:
     doctrine "0.7.2"
     tslib "1.9.0"
-    tsutils "2.8.0"
+    tsutils "^3.0.0"
 
 tslint-sonarts@1.7.0:
   version "1.7.0"
@@ -2028,15 +2017,15 @@ tslint@5.11.0:
     tslib "^1.8.0"
     tsutils "^2.27.2"
 
-tsutils@2.8.0:
-  version "2.8.0"
-  resolved "https://registry.yarnpkg.com/tsutils/-/tsutils-2.8.0.tgz#0160173729b3bf138628dd14a1537e00851d814a"
-  dependencies:
-    tslib "^1.7.1"
-
 tsutils@^2.27.2:
   version "2.29.0"
   resolved "https://registry.yarnpkg.com/tsutils/-/tsutils-2.29.0.tgz#32b488501467acbedd4b85498673a0812aca0b99"
+  dependencies:
+    tslib "^1.8.1"
+
+tsutils@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/tsutils/-/tsutils-3.0.0.tgz#0c5070a17a0503e056da038c48b5a1870a50a9ad"
   dependencies:
     tslib "^1.8.1"
 
