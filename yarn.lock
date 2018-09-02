@@ -814,8 +814,8 @@ flat-cache@^1.2.1:
     write "^0.2.1"
 
 fluent-binary-converter@4:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/fluent-binary-converter/-/fluent-binary-converter-4.0.2.tgz#548fe702e3d38ac02a1d095bdf6c723ae31a3d8a"
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/fluent-binary-converter/-/fluent-binary-converter-4.1.0.tgz#25869e9fa51649bbd16cbeaa7097663244ce419a"
 
 fs.realpath@^1.0.0:
   version "1.0.0"

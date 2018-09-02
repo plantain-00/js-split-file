@@ -1,5 +1,5 @@
 import { StringDecoder } from 'string_decoder'
-import { BinaryDecoder, BinaryEncoder } from 'fluent-binary-converter/nodejs'
+import { BinaryDecoder, BinaryEncoder } from 'fluent-binary-converter'
 
 /**
  * @public

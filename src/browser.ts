@@ -1,4 +1,4 @@
-import { BinaryDecoder, BinaryEncoder } from 'fluent-binary-converter/browser'
+import { BinaryDecoder, BinaryEncoder } from 'fluent-binary-converter'
 
 declare class TextEncoder {
   encode(text: string): Uint8Array

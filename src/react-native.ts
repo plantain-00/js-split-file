@@ -1,4 +1,4 @@
-import { BinaryDecoder, BinaryEncoder } from 'fluent-binary-converter/browser'
+import { BinaryDecoder, BinaryEncoder } from 'fluent-binary-converter'
 import { TextEncoder, TextDecoder } from 'text-encoding'
 
 /**

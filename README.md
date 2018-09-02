@@ -17,13 +17,7 @@ A library to split big file to small binary data for nodejs and browsers.
 ## usage
 
 ```ts
-// nodejs:
-import SplitFile from "js-split-file/nodejs";
-
-// browser(module):
-import SplitFile from "js-split-file/browser";
-
-// browser(script tag):
+import SplitFile from "js-split-file";
 // <script src="js-split-file/js-split-file.min.js"></script>
 
 // react-native:
