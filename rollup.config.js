@@ -3,9 +3,9 @@ import resolve from 'rollup-plugin-node-resolve'
 
 export default {
   input: 'dist/browser.js',
-  name: 'SplitFile',
   plugins: [resolve({ browser: true }), uglify()],
   output: {
+    name: 'SplitFile',
     file: 'dist/js-split-file.min.js',
     format: 'umd'
   }
