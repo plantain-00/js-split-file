@@ -30,7 +30,7 @@ export default class SplitFile {
       binary
     }
   }
-  public split(uint8Array: Uint8Array, fileName: string, size: number = 10000) {
+  public split(uint8Array: Uint8Array, fileName: string, size = 10000) {
     const blocks: Uint8Array[] = []
     if (uint8Array.length === 0) {
       return blocks
