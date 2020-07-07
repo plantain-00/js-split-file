@@ -1,6 +1,6 @@
 {
   "name": "js-split-file",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "A library to split big file to small binary data for nodejs and browsers.",
   "main": "nodejs.js",
   "module": "browser.js",
