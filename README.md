@@ -2,7 +2,6 @@
 
 [![Dependency Status](https://david-dm.org/plantain-00/js-split-file.svg)](https://david-dm.org/plantain-00/js-split-file)
 [![devDependency Status](https://david-dm.org/plantain-00/js-split-file/dev-status.svg)](https://david-dm.org/plantain-00/js-split-file#info=devDependencies)
-[![Build Status: Linux](https://travis-ci.org/plantain-00/js-split-file.svg?branch=master)](https://travis-ci.org/plantain-00/js-split-file)
 [![Build Status: Windows](https://ci.appveyor.com/api/projects/status/github/plantain-00/js-split-file?branch=master&svg=true)](https://ci.appveyor.com/project/plantain-00/js-split-file/branch/master)
 ![Github CI](https://github.com/plantain-00/js-split-file/workflows/Github%20CI/badge.svg)
 [![npm version](https://badge.fury.io/js/js-split-file.svg)](https://badge.fury.io/js/js-split-file)
